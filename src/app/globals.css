@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-900: #1e3a8a;
+  
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed;
+  
+  --color-bg-base: #0f172a;
+  --color-bg-surface: #1e293b;
+  --color-bg-subtle: #334155;
+  
+  --color-text-base: #f8fafc;
+  --color-text-muted: #94a3b8;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-base text-text-base antialiased min-h-screen selection:bg-brand-500 selection:text-white;
+    background-image: radial-gradient(circle at top right, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-bg-surface/80 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  .glass-card {
+    @apply bg-bg-surface/50 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg transition-all hover:bg-bg-surface/70 hover:border-white/10;
+  }
+  .input-field {
+    @apply w-full bg-bg-base/50 border border-white/10 rounded-xl px-4 py-3 text-text-base placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-500 hover:to-accent-500 text-white font-medium py-2.5 px-6 rounded-xl transition-all shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply bg-white/5 hover:bg-white/10 text-white font-medium py-2.5 px-6 rounded-xl transition-all border border-white/10 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+}
