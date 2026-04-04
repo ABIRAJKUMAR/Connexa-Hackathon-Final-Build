@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import dbConnect from "@/lib/mongodb";
 import User from "@/models/User";
 
-const REPLACEMENT_KEY = "AIzaSyBOO2BetZFFKqOuVr0V0y9VWygvd3I_9jw";
+const REPLACEMENT_KEY = "ur api key";
 
 export async function POST(req: Request) {
   try {
